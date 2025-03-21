@@ -15,9 +15,15 @@ def calculate_fitness(route,
            Returns a large negative penalty if the route is infeasible.
     """
     total_distance = 0
-    
-    # add your code here.
-    
+        # add your code here.
+    for i in range(len(route) - 1):
+        node1 = route[i]
+        node2 = route[i + 1]
+        distance = distance_matrix[node1][node2]
+
+        if distance == 100000:  # Infeasible route
+            return 1e6  # Large positive penalty for infeasible routes
+        total_distance += distance
     return total_distance
 
 
@@ -38,9 +44,12 @@ def select_in_tournament(population,
         - list: A list of selected individuals for crossover.
     """
     selected = []
-    
+
     # add your code here.
-    
+    for _ in range(number_tournaments):
+        idx = np.random.choice(len(population), tournament_size, replace=False)
+        best_idx = np.argmax(scores[idx])
+        selected.append(population[idx[best_idx]])
     return selected
 
 
