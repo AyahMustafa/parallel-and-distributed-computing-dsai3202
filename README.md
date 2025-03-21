@@ -69,6 +69,8 @@ I executed the program using the extended city map city_distances_extended.csv t
 
 Adding More Cars to the Problem:
 To add more cars to the problem, I would modify the genetic algorithm to handle multiple routes simultaneously. Each car could be represented as a separate individual in the population, and the fitness function would need to be adjusted to account for the total distance traveled by all cars. Additionally, I would ensure that each delivery node is visited exactly once across all routes, which may require additional constraints in the fitness evaluation.
-
+real    0m10.089s
+user    0m9.904s
+sys     0m0.177s
 
 
